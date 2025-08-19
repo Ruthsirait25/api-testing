@@ -6,15 +6,16 @@ Menunjukkan cara melakukan pengujian **GET, POST, PUT, DELETE** dengan struktur 
 ---
 
 ## 📂 Struktur Project
+```
 api-testing/
 ├── src/
-│ ├── config/ConfigMaster.js
-│ ├── helpers/RequestHelper.js
-│ └── test/sample.test.js
+│   ├── config/ConfigMaster.js
+│   ├── helpers/RequestHelper.js
+│   └── test/api.test.js
 ├── .env.example
 ├── package.json
-
----
+└── README.md
+```
 
 ## ⚡ Cara Menjalankan
 
