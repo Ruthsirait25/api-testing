@@ -6,7 +6,13 @@ Menunjukkan cara melakukan pengujian **GET, POST, PUT, DELETE** dengan struktur 
 ---
 
 ## 📂 Struktur Project
-
+api-testing/
+├── src/
+│ ├── config/ConfigMaster.js
+│ ├── helpers/RequestHelper.js
+│ └── test/sample.test.js
+├── .env.example
+├── package.json
 
 ---
 
@@ -16,4 +22,12 @@ Menunjukkan cara melakukan pengujian **GET, POST, PUT, DELETE** dengan struktur 
    ```bash
    git clone https://github.com/username/api-testing.git
    cd api-testing
-Install dependencies
+2. **Install dependencies**
+   ```bash
+   npm install
+3. **Buat file .env dari .env.example**
+    ```bash
+       BASE_URL=https://jsonplaceholder.typicode.com
+4. **Jalankan Test**
+    ```bash      
+      npm test
