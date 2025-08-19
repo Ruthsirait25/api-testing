@@ -1,0 +1,19 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.11.0",
+    "jest": "^30.0.5"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}
