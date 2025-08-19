@@ -42,7 +42,7 @@ API-TESTING/
    a. **Jika ingin menjalankan di terminal**
     ```bash      
       npm test
-    
+    ```
    b. **Jika ingin melihat detail report dalam format HTML**
         ```bash
        npm test -- --reporters=default --reporters=jest-html-reporters
