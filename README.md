@@ -40,11 +40,11 @@ API-TESTING/
        BASE_URL=https://jsonplaceholder.typicode.com
 4. **Menjalankan Test**
    Ada dua opsi untuk menjalankan test:
-## a. Menjalankan langsung di terminal
+##### a. Menjalankan langsung di terminal
 ```bash
 npm test
 ```
-## b. Jika ingin melihat detail report dalam format HTML
+##### b. Jika ingin melihat detail report dalam format HTML
        npm test -- --reporters=default --reporters=jest-html-reporters
    
 5. **📊 Hasil Report**
