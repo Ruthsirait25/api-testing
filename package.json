@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "axios": "^1.11.0",
-    "jest": "^30.0.5"
+    "jest": "^30.0.5",
+    "jest-html-reporter": "^4.3.0"
   },
   "dependencies": {
     "dotenv": "^17.2.1"
