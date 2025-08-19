@@ -1,22 +1,19 @@
-# Api-testing
-Project untuk Automated API Testing menggunakan Jest &amp; Supertest. Menunjukkan cara melakukan pengujian GET, POST, PUT, DELETE dengan struktur kode yang rapi dan penggunaan environment variable.
+# 🚀 API Testing
 
-## Struktur Project
-api-testing/
-├── src/
-│ ├── config/ConfigMaster.js
-│ ├── helpers/RequestHelper.js
-│ └── test/sample.test.js
-├── .env.example
-├── package.json
-└── README.md
+Project untuk **Automated API Testing** menggunakan **Jest** & **Supertest**.  
+Menunjukkan cara melakukan pengujian **GET, POST, PUT, DELETE** dengan struktur kode yang rapi serta penggunaan **environment variable**.
 
-1. Clone project:
+---
+
+## 📂 Struktur Project
+
+
+---
+
+## ⚡ Cara Menjalankan
+
+1. **Clone project**
+   ```bash
    git clone https://github.com/username/api-testing.git
    cd api-testing
-2. Install dependencies:
-  npm install
-3. Buat file .env dari .env.example:
-   BASE_URL=https://jsonplaceholder.typicode.com
-4. Jalankan test:
-   npm test
+Install dependencies
