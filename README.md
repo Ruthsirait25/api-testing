@@ -46,7 +46,8 @@ API-TESTING/
    b. **Jika ingin melihat detail report dalam format HTML**
         ```bash
        npm test -- --reporters=default --reporters=jest-html-reporters
-5. **📊 Hasil Report**
+        ```
+6. **📊 Hasil Report**
       Setelah menjalankan test, buka file berikut di browser
    ```bash
    reports/test-report.html
