@@ -38,16 +38,17 @@ API-TESTING/
 3. **Buat file .env dari .env.example**
     ```bash
        BASE_URL=https://jsonplaceholder.typicode.com
-4. **Jalankan Test**
-   a. **Jika ingin menjalankan di terminal**
-    ```bash      
-      npm test
-    ```
-   b. **Jika ingin melihat detail report dalam format HTML**
+4. **Menjalankan Test**
+   Ada dua opsi untuk menjalankan test:
+### a. Menjalankan langsung di terminal
+```bash
+npm test
+```
+### b. Jika ingin melihat detail report dalam format HTML
         ```bash
        npm test -- --reporters=default --reporters=jest-html-reporters
         ```
-6. **📊 Hasil Report**
+5. **📊 Hasil Report**
       Setelah menjalankan test, buka file berikut di browser
    ```bash
    reports/test-report.html
