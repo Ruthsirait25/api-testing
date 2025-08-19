@@ -7,13 +7,22 @@ Menunjukkan cara melakukan pengujian **GET, POST, PUT, DELETE** dengan struktur 
 
 ## 📂 Struktur Project
 ```
-api-testing/
-├── src/
-│   ├── config/ConfigMaster.js
-│   ├── helpers/RequestHelper.js
-│   └── test/api.test.js
-├── .env.example
-├── package.json
+API-TESTING/
+│── node_modules/
+│── reports/ 
+│ └── test-report.html
+│── src/
+│ ├── config/
+│ │ └── ConfigMaster.js 
+│ ├── helpers/
+│ │ └── RequestHelper.js
+│ └── test/
+│ └── api.test.js
+│── .env.example
+│── .gitignore
+│── jest.config.js
+│── package.json
+│── package-lock.json
 └── README.md
 ```
 
@@ -30,5 +39,15 @@ api-testing/
     ```bash
        BASE_URL=https://jsonplaceholder.typicode.com
 4. **Jalankan Test**
+   a. **Jika ingin menjalankan di terminal**
     ```bash      
       npm test
+    
+   b. **Jika ingin melihat detail report dalam format HTML**
+        ```bash
+       npm test -- --reporters=default --reporters=jest-html-reporters
+5. **📊 Hasil Report**
+      Setelah menjalankan test, buka file berikut di browser
+   ```bash
+   reports/test-report.html
+
