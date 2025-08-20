@@ -1,46 +1,54 @@
-const api = require('../helpers/RequestHelper');
+const request = require("../helpers/RequestHelper");
+const { createUserData, updateUserData, deleteUserData } = require("../config/TestData");
 
 describe("Testing API JSONPlaceholder", () => {
-
-  // READ
+  
+  // === READ ===
   it("GET - Ambil 1 post", async () => {
-    const res = await api.get("/posts/1");
+    const res = await request.get("/posts/1");
     expect(res.status).toBe(200);
     expect(res.data).toHaveProperty("id", 1);
   });
 
-  // CREATE
-  it("POST - Buat post baru", async () => {
-    const payload = {
-      title: "Belajar Testing API",
-      body: "Ini adalah body contoh",
-      userId: 1
-    };
-    const res = await api.post("/posts", payload);
-    expect(res.status).toBe(201);
-    expect(res.data).toMatchObject(payload);
+  // === CREATE ===
+  describe("CREATE", () => {
+    test.each(createUserData)(
+      "Should create user with name: %s and email: %s",
+      async (payload) => {
+        const res = await request.post("/users", payload);
 
-    global.newPostId = res.data.id;
+        expect(res.status).toBe(201);
+        expect(res.data).toHaveProperty("id");
+        expect(res.data.name).toBe(payload.name);
+        expect(res.data.email).toBe(payload.email);
+      }
+    );
   });
 
-  // UPDATE
-  it("PUT - Update post yang ada", async () => {
-    const payload = {
-      id: 1,
-      title: "Menjalani Hidup Sebagai Pengangguran ",
-      body: "Semoga ini tidak akan lama",
-      userId: 1
-    };
-    const res = await api.put("/posts/1", payload);
-    expect(res.status).toBe(200);
-    expect(res.data).toMatchObject(payload);
+  // === UPDATE ===
+  describe("UPDATE", () => {
+    test.each(updateUserData)(
+      "Should update post with id: %s",
+      async (payload) => {
+        const res = await request.put(`/posts/${payload.id}`, payload);
+
+        expect(res.status).toBe(200);
+        expect(res.data).toMatchObject(payload);
+      }
+    );
   });
 
-  // DELETE
-  it("DELETE - Hapus post", async () => {
-    const res = await api.delete("/posts/1");
-    expect([200, 204]).toContain(res.status);
-    expect(res.data).toEqual({});
+  // === DELETE ===
+  describe("DELETE", () => {
+    test.each(deleteUserData)(
+      "Should delete post with id: %s",
+      async (payload) => {
+        const res = await request.delete(`/posts/${payload.id}`);
+
+        expect([200, 204]).toContain(res.status);
+        expect(res.data).toEqual({});
+      }
+    );
   });
 
 });
