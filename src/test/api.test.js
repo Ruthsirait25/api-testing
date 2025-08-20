@@ -1,5 +1,5 @@
 const request = require("../helpers/RequestHelper");
-const { createUserData, updateUserData, deleteUserData } = require("../config/TestData");
+const { createUserData, updateUserData, deleteUserData } = require("../fixtures/TestData");
 
 describe("Testing API JSONPlaceholder", () => {
   
