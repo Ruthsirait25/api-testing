@@ -1,10 +1,10 @@
 const request = require("../helpers/RequestHelper");
 const { createUserData, updateUserData, deleteUserData } = require("../fixtures/TestData");
 
-describe("Testing API JSONPlaceholder", () => {
+describe("API Testing JSONPlaceholder", () => {
   
   // === READ ===
-  it("GET - Ambil 1 post", async () => {
+  it("Bisa ambil data post pertama", async () => {
     const res = await request.get("/posts/1");
     expect(res.status).toBe(200);
     expect(res.data).toHaveProperty("id", 1);
@@ -13,7 +13,7 @@ describe("Testing API JSONPlaceholder", () => {
   // === CREATE ===
   describe("CREATE", () => {
     test.each(createUserData)(
-      "Should create user with name: %s and email: %s",
+      "Bisa tambah user baru: $name dengan email $email",
       async (payload) => {
         const res = await request.post("/users", payload);
 
@@ -28,7 +28,7 @@ describe("Testing API JSONPlaceholder", () => {
   // === UPDATE ===
   describe("UPDATE", () => {
     test.each(updateUserData)(
-      "Should update post with id: %s",
+      "Update berhasil untuk post ID: $id (judul: $title)",
       async (payload) => {
         const res = await request.put(`/posts/${payload.id}`, payload);
 
@@ -41,7 +41,7 @@ describe("Testing API JSONPlaceholder", () => {
   // === DELETE ===
   describe("DELETE", () => {
     test.each(deleteUserData)(
-      "Should delete post with id: %s",
+      "Berhasil hapus post dengan ID: $id",
       async (payload) => {
         const res = await request.delete(`/posts/${payload.id}`);
 
